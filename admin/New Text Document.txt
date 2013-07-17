@@ -1,0 +1,7 @@
+1. data pendaftaran
+2. biodata siswa
+3. nilai-nilai
+4. pembayaran spp dpp
+5. Naik kelas/ tdk naik, lulus/tdk lulus
+6. ono pelanggaran siswa
+7. ono point pelanggaran
