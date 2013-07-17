@@ -4,7 +4,10 @@ Sistem Akademik Reloaded
 ========================
 
 Project Iseng Iseng, siapa tau dengan iseng iseng bisa beli perangkat perang baru.
-masih dalam tahap development.
+Code ini dalam tahap development.
+
+Yang mau gabung untuk kontribusi ngembangin project ini bisa hubungi saya, atau ada yang mau investasi ?
+Monggoh, Siapa tau kita bisa bikin project lainnya
 
 Getting Started
 ---------------
@@ -21,16 +24,21 @@ Getting Started
 
 Demo
 ----
+Untuk Demo nya bisa kunjungi
+
 http://pertamakali.ml/
 
-**Username=sikad**
-**Password=sikad**
+Login dengan Username dan Password dibawah ini
+
+**Username:** sikad
+
+**Password:** sikad
 
 Contact
 -------
 
-**dwirahmanhadi@yahoo.co.id**
+**Email:** dwirahmanhadi@yahoo.co.id
 
-**081-555-369-300**
+**Phone:** 081-555-369-300
 
 
