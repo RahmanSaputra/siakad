@@ -209,8 +209,7 @@
       <tbody>
      <?php
 
-    mysql_connect('localhost','root','');
-    mysql_select_db('siakad');
+    include 'koneksi.php';
     $query = $_POST['search'];
     $sql = mysql_query("SELECT * FROM guru WHERE nama LIKE '%{$query}%'");
     $array = array();

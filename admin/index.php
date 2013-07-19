@@ -84,7 +84,6 @@ $querys = "SELECT * FROM admin WHERE username='$dd'";
 					}
 					?>
 							<?php echo $b, " ", $c ;
-
 ?>
                             <i class="icon-caret-down"></i>
                         </a>

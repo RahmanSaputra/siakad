@@ -80,49 +80,66 @@
                 <a class="brand" href="index.html"><span class="first">Your</span> <span class="second">Company</span></a>
         </div>
     </div>
-    
-
-
-    
     <div class="sidebar-nav">
-        <form class="search form-inline">
-            <input type="text" placeholder="Search...">
-        </form>
+            <form class="search form-inline">
+                <input type="text" placeholder="Search...">
+            </form>
+     
+            <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Dashboard</a>
+            <ul id="dashboard-menu" class="nav nav-list collapse in">
+                <li><a href="index.php">Home</a></li>
+                <li ><a href="berita.php">Berita</a></li>
+                <li ><a href="">Pendaftaran</a></li>
+                <li ><a href="">Hasil Seleksi</a></li>
+                <li ><a href="">Pengumuman</a></li>
+               
+            </ul>
+     
+            <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-cog"></i>Setting<span class="label label-info">+3</span></a>
+            <ul id="accounts-menu" class="nav nav-list collapse">
+                <li ><a href="update_account.php">Profile</a></li>
+                <li ><a href="logout.php">Log Out</a></li>
+                <li ><a href="reset-password.html">Reset Password</a></li>
+            </ul>
+     
+            <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-user-md"></i>Guru <i class="icon-chevron-up"></i></a>
+            <ul id="error-menu" class="nav nav-list collapse">
+                <li ><a href="guru.php">Data Guru</a></li>
+            </ul>
+     
+            <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-user"></i>Siswa</a>
+            <ul id="legal-menu" class="nav nav-list collapse">
+                <li ><a href="privacy-policy.html">wow</a></li>
+                <li ><a href="">wew</a></li>
+            </ul>
+                    <a href="#kelas-menu" class="nav-header" data-toggle="collapse"><i class="icon-sitemap"></i>Kelas</a>
+            <ul id="kelas-menu" class="nav nav-list collapse">
+                <li ><a href="">Kelas X</a></li>
+                <li ><a href="">Kelas XI</a></li>
+                <li ><a href="">Kelas XII</a></li>
+            </ul>
+           
+            <a href="" class="nav-header" ><i class="icon-edit"></i>Mata Pelajaran</a>
+           
+            <a href="#keuangan-menu" class="nav-header" data-toggle="collapse"><i class="icon-money"></i>Keuangan</a>
+            <ul id="keuangan-menu" class="nav nav-list collapse">
+                <li ><a href="">SPP</a></li>
+                <li ><a href="">DPP</a></li>
+            </ul>
+            <a href="#bk-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Bimbingan Konseling</a>
+            <ul id="bk-menu" class="nav nav-list collapse">
+                <li ><a href="">wew</a></li>
+                <li ><a href="">wow</a></li>
+            </ul>
+            <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-envelope-alt"></i>SMS Gateway<span class="label label-info">Premium</span></a>
+            <a href="" class="nav-header" ><i class="icon-file"></i>Report<span class="label label-info">Premium</span></a>
+            <a href="" class="nav-header" ><i class="icon-comment"></i>Help</a>
+       </ul>          
+        </div>
 
-        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Dashboard</a>
-        <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="users.html">Sample List</a></li>
-            <li ><a href="user.html">Sample Item</a></li>
-            <li ><a href="media.html">Media</a></li>
-            <li ><a href="calendar.html">Calendar</a></li>
-            
-        </ul>
 
-        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Account<span class="label label-info">+3</span></a>
-        <ul id="accounts-menu" class="nav nav-list collapse">
-            <li ><a href="sign-in.html">Sign In</a></li>
-            <li ><a href="sign-up.html">Sign Up</a></li>
-            <li ><a href="reset-password.html">Reset Password</a></li>
-        </ul>
-
-        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>Error Pages <i class="icon-chevron-up"></i></a>
-        <ul id="error-menu" class="nav nav-list collapse">
-            <li ><a href="403.html">403 page</a></li>
-            <li ><a href="404.html">404 page</a></li>
-            <li ><a href="500.html">500 page</a></li>
-            <li ><a href="503.html">503 page</a></li>
-        </ul>
-
-        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Legal</a>
-        <ul id="legal-menu" class="nav nav-list collapse">
-            <li ><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li ><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-        </ul>
-
-        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>Help</a>
-        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>Faq</a>
-    </div>
+    
+    
     
 
     
@@ -134,7 +151,7 @@
         </div>
         
                 <ul class="breadcrumb">
-            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+            <li><a href="index.php">Home</a> <span class="divider">/</span></li>
             <li class="active">Mata Pelajaran</li>
         </ul>
 
