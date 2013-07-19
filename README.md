@@ -27,11 +27,15 @@ Untuk Demo nya bisa kunjungi
 
 http://pertamakali.ml/
 
-Login dengan Username dan Password dibawah ini
+Login dengan Username dan Password dibawah ini 
 
 **Username:** sikad
 
 **Password:** sikad
+
+Release Update
+--------------
+Lihat disini untuk update dan realease project ini [![build status](https://cdn1.iconfinder.com/data/icons/fugue/icon_shadowless/arrow_circle_double.png?branch=master)](https://github.com/RahmanSaputra/siakad/commits/master)
 
 Contact
 -------
