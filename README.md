@@ -3,11 +3,7 @@
 Sistem Akademik Reloaded
 ========================
 
-Project Iseng Iseng, siapa tau dengan iseng iseng bisa beli perangkat perang baru.
-Code ini dalam tahap development.
-
-Yang mau gabung untuk kontribusi ngembangin project ini bisa hubungi saya, atau ada yang mau investasi ?
-Monggoh, Siapa tau kita bisa bikin project lainnya
+Project ini masih dalam tahap proses development
 
 Getting Started
 ---------------
