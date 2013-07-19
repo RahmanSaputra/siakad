@@ -5,7 +5,8 @@ Sistem Akademik Reloaded
 Ini adalah project Sistem Akademik atau biasanya disebut siakad, tujuan dibuatnya project ini adalah untuk mengembangkan
 sistem akademik berbasis web.
 
-Project ini masih dalam tahap proses development
+Project ini masih dalam tahap proses development. saya akan merasa senang bila ada teman
+teman yang mau ikut menjadi kontributor dalam project ini.
 
 Getting Started
 ---------------
@@ -18,7 +19,7 @@ Getting Started
 6. Dump database
 7. Selesai
 
-**Note:** Untuk databasenya bisa request ke email atau sms 
+**Note:** Untuk databasenya bisa di ambil disini [![build status](https://cdn1.iconfinder.com/data/icons/crystalproject/16x16/apps/ark.png?branch=master)](http://pastebin.com/tF1Z4DZZ) 
 
 Demo
 ----
