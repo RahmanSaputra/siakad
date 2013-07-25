@@ -77,7 +77,7 @@
                     </li>
                     
                 </ul>
-                <a class="brand" href="index.html"><span class="first">Your</span> <span class="second">Company</span></a>
+                <a class="brand" href="index.html"><span class="first">Sistem Akademik</span> <span class="second">SMKN 9 Malang</span></a>
         </div>
     </div>
     <div class="sidebar-nav">
@@ -163,75 +163,203 @@
   <i class="icon-search icon-large"></i> Search</a>
         </form>     
 <div class="btn-toolbar">
-    <button class="btn btn-primary"><i class="icon-plus"></i> New Mata Pelajaran</button>
-    <button class="btn">Import</button>
+<a href="#Modalbaru" role="button" data-toggle="modal" class="btn btn-primary">
+      <i class="icon-plus-sign icon-large"></i> New MataPelajaran</a>    <button class="btn">Import</button>
     <button class="btn">Export</button>
   <div class="btn-group">
   </div>
 </div>
 <div class="well">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Kode Mata Pelajaran</th>
-          <th>Mata Pelajaran</th>
-          <th style="width: 26px;"></th>
-        </tr>
-      </thead>
-      <tbody>
-     <?php include 'koneksi.php';
-                   
-                    $query = "SELECT *
-FROM `mata_pelajaran`";
-                    $exe = mysql_query($query);
-					$i=1;
-                    while($row = mysql_fetch_assoc($exe)){
-                       	
-                        $a = $row['kode_mapel'];
-                        $b = $row['nama_mapel'];
-						$i++;
-          echo  "<tr>";
-		  	echo      "<td>".$i."</td>";
-			echo      "<td>".$a."</td>";
-             echo      "<td>".$b."</td>";
-             echo    "<td>";
-echo "<a href=user.html><i class=icon-pencil></i></a>";
-echo "<a href=#myModal role=button data-toggle=modal><i class=icon-remove></i></a>";
-       echo   "</td>";
-     echo     "</tr>";
-					}
-					?>
-      </tbody>
+    <div>
+         <div class="well">
+        <table class="table">
+            <tr>
+           		<th>No</th>
+              <th>NIP</th>
+              <th>Nama Guru</th>
+              <th>Mata Pelajaran</th>
+              <th style="width: 26px;"></th>
+            </tr>
+            <tr>
+              	<td></td>
+                </tr>
+         <?php include 'koneksi.php';
+                       
+    $dataPerPage=4;
+     
+    if(isset($_GET['page']))
+    {
+    $noPage=$_GET['page'];
+    }
+    else
+    {
+    $noPage=1;
+    }
+     
+    $offset=($noPage-1) * $dataPerPage;
+    $query = "SELECT pembelajaran.id_pembelajaran, guru.NIP, guru.nama, mata_pelajaran.nama_mapel, mata_pelajaran.kode_mapel
+FROM guru
+RIGHT JOIN pembelajaran 
+ON guru.NIP = pembelajaran.NIP
+RIGHT JOIN mata_pelajaran 
+ON pembelajaran.kode_mapel = mata_pelajaran.kode_mapel
+ORDER BY `pembelajaran`.`id_pembelajaran` ASC
+LIMIT $offset,$dataPerPage";
+                        $exe = mysql_query($query);
+                        while($row = mysql_fetch_assoc($exe)){
+            				$e = $row['kode_mapel'];
+                            $d = $row['NIP'];  
+							$b = $row['nama'];
+                            $c = $row['nama_mapel'];
+							$a = $row['id_pembelajaran'];
+ ?>
+              <tr>
+              	
+              	<td><?php echo $a; ?></td>
+                 <td><?php echo $d; ?></td>
+                 <td><?php echo $b; ?></td>
+                 <td><?php echo $c; ?></td>
+                  
+                 <td>
+    <a href=update_pendaftaran.php?no_daftar=<?php echo $e; ?>><i class=icon-pencil></i></a>
+    <a href="#myModal" role="button" data-toggle="modal" id="<?php echo $e; ?>"><i class=icon-remove></i></a>
+          </td>
+         </tr>
+                                    <?php   } ?>
+                    <?php
+                                    include 'koneksi.php';
+                       
+    $dataPerPage=4;
+     
+    if(isset($_GET['page']))
+    {
+    $noPage=$_GET['page'];
+    }
+    else
+    {
+    $noPage=1;
+    }
+     
+    $offset=($noPage-1) * $dataPerPage;
+                    $query=mysql_query("select count(*) jumData from mata_pelajaran");
+    $data=mysql_fetch_array($query);
+     
+    $jumData=$data['jumData'];
+    $jumPage=ceil($jumData/$dataPerPage);
+      echo  "</table>";
+      echo "</div>";
+      echo "<div class=pagination>";
+     echo "<ul>";
+    if($noPage >1)
+    {
+    echo "<li><a href='".$_SERVER['PHP_SELF']."?page=".($noPage-1)."'>&lt;&lt; Prev</a></li>";
+    }
+     
+    for($page = 1; $page <= $jumPage; $page++)
+    {
+    if ((($page >= $noPage - 2) && ($page <= $noPage + 2)) || ($page == 1) || ($page == $jumPage))
+    {
+     
+    if ($page == $noPage) echo "<li><a href='".$_SERVER['PHP_SELF']."?page=".$page."'>".$page."</a></li>";
+    else echo "<li><a href='".$_SERVER['PHP_SELF']."?page=".$page."'>".$page."</a></li> ";
+    $showPage=$page;
+    }
+    }
+     
+     
+    if ($noPage < $jumPage) echo "<li><a href='".$_SERVER['PHP_SELF']."?page=".($noPage+1)."'>Next &gt;&gt;</a></li>";
+    echo "</ul>";
+    echo "</div>";
+    ?>
+        </div>
+    </form>
+      </div>
+  </div>
+
+</div>
+
+<!---- MODAL delete UNTUK delete GURU --->
+    <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Delete Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Menghapus mata pelajaran ?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+          <a class="btn btn-primary" a href="remove_pelajaran.php?kode_mapel=<?php echo $e; ?>" id="modal-delete-button">
+      <i class="icon-search icon-large"></i> Delete</a>
+        </div>
+    </div>     
+    
+    
+          <form action="savematapelajaran.php" method="post" id="saveguru">
+    <div class="modal small hide fade" id="Modalbaru" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="ModalbaruLabel">Add Mata Pelajaran</h3>
+        </div>
+        <div class="modal-body">
+         <table width="500" border="0" align="center">
+      <tr>
+        <td align="left" valign="middle">Mata Pelajaran :</td>
+        <td valign="middle"><?php
+		include 'koneksi.php';
+		$que = "SELECT kode_mapel
+FROM `mata_pelajaran`
+GROUP BY kode_mapel;";
+                        $kelas = mysql_query($que);
+                       
+     echo "<select class=combobox name=kode_mapel required=required>";
+	  while($rowss = mysql_fetch_assoc($kelas))
+		 {
+      echo"<option name=".$rowss['kode_mapel'].">".$rowss['kode_mapel']."</option>";
+         } 
+          echo   "</select>"; ?>
+      </tr>
+      <tr>
+        <td>Nama Guru :</td>
+        <td valign="middle"><?php
+		include 'koneksi.php';
+		$que = "SELECT NIP, nama
+FROM `guru`";
+                        $kelas = mysql_query($que);
+                       
+     echo "<select class=combobox name=NIP required=required>";
+	  while($rowss = mysql_fetch_assoc($kelas))
+		 {
+      echo"<option name=".$rowss['NIP'].">".$rowss['NIP']."</option>";
+         } 
+          echo   "</select>"; ?>
+      </tr>
+      <tr>
+        <td>Nama Kelas :</td>
+        <td valign="middle"><?php
+		include 'koneksi.php';
+		$que = "SELECT kode_kelas
+FROM `kelas`";
+                        $kelas = mysql_query($que);
+                       
+     echo "<select class=combobox name=kode_kelas required=required>";
+	  while($rowss = mysql_fetch_assoc($kelas))
+		 {
+      echo"<option name=".$rowss['kode_kelas'].">".$rowss['kode_kelas']."</option>";
+         } 
+          echo   "</select>"; ?>
+      </tr>
     </table>
-</div>
-<div class="pagination">
-    <ul>
-        <li><a href="#">Prev</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">Next</a></li>
-    </ul>
-</div>
-
-<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Delete Confirmation</h3>
+      </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <a class="btn btn-primary" onclick="document.getElementById('saveguru').submit();">
+      <i class="icon-save icon-large"></i> Simpan</a>
+        </div>
     </div>
-    <div class="modal-body">
-        <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
-    </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        <button class="btn btn-danger" data-dismiss="modal">Delete</button>
-    </div>
-</div>
-
-
-                    
+    </form>
+    <!---  -->
                     <footer>
                         <hr>
                         <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
