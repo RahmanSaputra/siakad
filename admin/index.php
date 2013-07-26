@@ -115,22 +115,23 @@ $querys = "SELECT * FROM admin WHERE username='$dd'";
         <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li><a href="index.php">Home</a></li>
             <li ><a href="berita.php">Berita</a></li>
-            <li ><a href="">Pendaftaran</a></li>
+            <li ><a href="pendaftaran.php">Pendaftaran</a></li>
             <li ><a href="">Hasil Seleksi</a></li>
-            <li ><a href="">Pengumuman</a></li>
+            <li ><a href="pengumuman.php">Pengumuman</a></li>
             
         </ul>
 
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-cog"></i>Setting<span class="label label-info">+3</span></a>
         <ul id="accounts-menu" class="nav nav-list collapse">
-            <li ><a href="update_account.php">Profile</a></li>
+            <li ><a href="account.php">Profile</a></li>
             <li ><a href="logout.php">Log Out</a></li>
-            <li ><a href="reset-password.html">Reset Password</a></li>
+            <li ><a href="">Reset Password</a></li>
         </ul>
 
         <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-user-md"></i>Guru <i class="icon-chevron-up"></i></a>
         <ul id="error-menu" class="nav nav-list collapse">
             <li ><a href="guru.php">Data Guru</a></li>
+            <li ><a href="matapelajaran.php">Data Pengajar</a></li>
         </ul>
 
         <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-user"></i>Siswa</a>
@@ -140,12 +141,14 @@ $querys = "SELECT * FROM admin WHERE username='$dd'";
         </ul>
 		<a href="#kelas-menu" class="nav-header" data-toggle="collapse"><i class="icon-sitemap"></i>Kelas</a>
         <ul id="kelas-menu" class="nav nav-list collapse">
-            <li ><a href="">Kelas X</a></li>
-            <li ><a href="">Kelas XI</a></li>
-            <li ><a href="">Kelas XII</a></li>
+            <li ><a href="kelas.php">Data Kelas</a></li>
         </ul>
         
-        <a href="" class="nav-header" ><i class="icon-edit"></i>Mata Pelajaran</a>
+        <a href="#pelajaran-menu" class="nav-header" data-toggle="collapse" ><i class="icon-edit"></i>Mata Pelajaran</a>
+        <ul id="pelajaran-menu" class="nav nav-list collapse">
+            <li ><a href="pelajaran.php">Data Pelajaran</a></li>
+            <li ><a href="matapelajaran.php">Mata Pelajaran</a></li>
+        </ul>
         
         <a href="#keuangan-menu" class="nav-header" data-toggle="collapse"><i class="icon-money"></i>Keuangan</a>
         <ul id="keuangan-menu" class="nav nav-list collapse">
@@ -157,21 +160,13 @@ $querys = "SELECT * FROM admin WHERE username='$dd'";
             <li ><a href="">wew</a></li>
             <li ><a href="">wow</a></li>
         </ul>
+        <a href="" class="nav-header" ><i class="icon-tasks"></i>Absensi<span class="label label-info">Premium</span></a>
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-envelope-alt"></i>SMS Gateway<span class="label label-info">Premium</span></a>
         <a href="" class="nav-header" ><i class="icon-file"></i>Report<span class="label label-info">Premium</span></a>
-        <a href="" class="nav-header" ><i class="icon-comment"></i>Help</a>
-        
-        
-        
-        </ul>
-
-        
+        <a href="" class="nav-header" ><i class="icon-comment"></i>Help</a>   
+        </ul>  
     </div>
-    
-
-    
     <div class="content">
-        
         <div class="header">
             <div class="stats">
     <p class="stat"><span class="number">12</span>Karyawan</p>

@@ -1,8 +1,16 @@
+<?php
+session_start();
+if (ISSET($_SESSION['username'])){
+}else{
+header("location:login.php");
+}
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap Admin</title>
+    <title>Sistem Akademik</title>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -63,27 +71,39 @@
                     <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>
                     <li id="fat-menu" class="dropdown">
                         <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> Jack Smith
-                            <i class="icon-caret-down"></i>
+                            <i class="icon-user"></i> 
+							<?php 
+			include 'koneksi.php';
+                   $dd = $_SESSION['username'];
+$querys = "SELECT * FROM admin WHERE username='$dd'";
+                    $exes = mysql_query($querys);
+                    while($rows = mysql_fetch_assoc($exes)){
+                       
+                        $a = $rows['id'];
+                        $b = $rows['first_name'];
+                        $c = $rows['last_name'];
+                        $d = $rows['username'];
+					}
+					?>
+							<?php echo $b, " ", $c ;
+?>
+                        <i class="icon-caret-down"></i>
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#">My Account</a></li>
+                            
+                          <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
+                            <li><a tabindex="-1" href="update_account.php">My Account</a></li>
                             <li class="divider"></li>
-                            <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
                             <li class="divider visible-phone"></li>
-                            <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                            <li><a tabindex="-1" href="logout.php">Logout</a></li>
                         </ul>
                     </li>
                     
                 </ul>
-                <a class="brand" href="index.html"><span class="first">Your</span> <span class="second">Company</span></a>
+                <a class="brand" href="index.html"><span class="first">Sistem Akademik</span> <span class="second">SMKN 9 Malang</span></a>
         </div>
     </div>
-    
-
-
-    
     <div class="sidebar-nav">
         <form class="search form-inline">
             <input type="text" placeholder="Search...">
@@ -91,38 +111,63 @@
 
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Dashboard</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="users.html">Sample List</a></li>
-            <li ><a href="user.html">Sample Item</a></li>
-            <li ><a href="media.html">Media</a></li>
-            <li ><a href="calendar.html">Calendar</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li ><a href="berita.php">Berita</a></li>
+            <li ><a href="pendaftaran.php">Pendaftaran</a></li>
+            <li ><a href="">Hasil Seleksi</a></li>
+            <li ><a href="pengumuman.php">Pengumuman</a></li>
             
         </ul>
 
-        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Account<span class="label label-info">+3</span></a>
+        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-cog"></i>Setting<span class="label label-info">+3</span></a>
         <ul id="accounts-menu" class="nav nav-list collapse">
-            <li ><a href="sign-in.html">Sign In</a></li>
-            <li ><a href="sign-up.html">Sign Up</a></li>
-            <li ><a href="reset-password.html">Reset Password</a></li>
+            <li ><a href="account.php">Profile</a></li>
+            <li ><a href="logout.php">Log Out</a></li>
+            <li ><a href="">Reset Password</a></li>
         </ul>
 
-        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>Error Pages <i class="icon-chevron-up"></i></a>
+        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-user-md"></i>Guru <i class="icon-chevron-up"></i></a>
         <ul id="error-menu" class="nav nav-list collapse">
-            <li ><a href="403.html">403 page</a></li>
-            <li ><a href="404.html">404 page</a></li>
-            <li ><a href="500.html">500 page</a></li>
-            <li ><a href="503.html">503 page</a></li>
+            <li ><a href="guru.php">Data Guru</a></li>
+            <li ><a href="matapelajaran.php">Data Pengajar</a></li>
         </ul>
 
-        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Legal</a>
+        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-user"></i>Siswa</a>
         <ul id="legal-menu" class="nav nav-list collapse">
-            <li ><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li ><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+            <li ><a href="privacy-policy.html">wow</a></li>
+            <li ><a href="">wew</a></li>
         </ul>
-
-        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>Help</a>
-        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>Faq</a>
+		<a href="#kelas-menu" class="nav-header" data-toggle="collapse"><i class="icon-sitemap"></i>Kelas</a>
+        <ul id="kelas-menu" class="nav nav-list collapse">
+            <li ><a href="kelas.php">Data Kelas</a></li>
+        </ul>
+        
+        <a href="#pelajaran-menu" class="nav-header" data-toggle="collapse" ><i class="icon-edit"></i>Mata Pelajaran</a>
+        <ul id="pelajaran-menu" class="nav nav-list collapse">
+            <li ><a href="pelajaran.php">Data Pelajaran</a></li>
+            <li ><a href="matapelajaran.php">Mata Pelajaran</a></li>
+        </ul>
+        
+        <a href="#keuangan-menu" class="nav-header" data-toggle="collapse"><i class="icon-money"></i>Keuangan</a>
+        <ul id="keuangan-menu" class="nav nav-list collapse">
+            <li ><a href="">SPP</a></li>
+            <li ><a href="">DPP</a></li>
+        </ul>
+        <a href="#bk-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>Bimbingan Konseling</a>
+        <ul id="bk-menu" class="nav nav-list collapse">
+            <li ><a href="">wew</a></li>
+            <li ><a href="">wow</a></li>
+        </ul>
+        <a href="" class="nav-header" ><i class="icon-tasks"></i>Absensi<span class="label label-info">Premium</span></a>
+        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-envelope-alt"></i>SMS Gateway<span class="label label-info">Premium</span></a>
+        <a href="" class="nav-header" ><i class="icon-file"></i>Report<span class="label label-info">Premium</span></a>
+        <a href="" class="nav-header" ><i class="icon-comment"></i>Help</a>   
+        </ul>  
     </div>
+
+
+    
+   
     
 
     
