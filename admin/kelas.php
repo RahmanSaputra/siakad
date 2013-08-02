@@ -254,7 +254,7 @@ LIMIT $offset,$dataPerPage";
                  <td><?php echo $b; ?></td>
                   
                  <td>
-    <a href=update_pendaftaran.php?no_daftar=<?php echo $e; ?>><i class=icon-pencil></i></a>
+    <a href=update_kelas.php?kode_kelas=<?php echo $e; ?>><i class=icon-pencil></i></a>
     <a href="#myModal" role="button" data-toggle="modal" id="<?php echo $e; ?>"><i class=icon-remove></i></a>
           </td>
          </tr>
@@ -322,7 +322,7 @@ LIMIT $offset,$dataPerPage";
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-          <a class="btn btn-primary" a href="remove_pelajaran.php?kode_mapel=<?php echo $e; ?>" id="modal-delete-button">
+          <a class="btn btn-primary" a href="remove_kelas.php?kode_kelas=<?php echo $e; ?>" id="modal-delete-button">
       <i class="icon-search icon-large"></i> Delete</a>
         </div>
     </div>     

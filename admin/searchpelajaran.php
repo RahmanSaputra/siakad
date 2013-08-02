@@ -3,9 +3,7 @@
 if (isset($_POST['query'])) {
     mysql_connect('localhost','root','');
     mysql_select_db('siakad');
-
     $query = $_POST['query'];
-
     $sql = mysql_query("SELECT pembelajaran.id_pembelajaran, guru.NIP, guru.nama, mata_pelajaran.nama_mapel, mata_pelajaran.kode_mapel
 FROM guru
 RIGHT JOIN pembelajaran 
