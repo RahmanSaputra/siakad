@@ -101,8 +101,8 @@ var t = setTimeout("ilang()", 5000);
                 </form>
             </div>
         </div>
-        <p class="pull-right" style=""><a href="http://www.portnine.com" target="blank">RahmanSaputra</a></p>
-        <p><a href="reset-password.html">Forgot your password?</a></p>
+        <p class="pull-right" style=""><a href="http://www.facebook.com/oksigencrew" target="blank">RahmanSaputra</a></p>
+        <p><a href="google.com">Forgot your password?</a></p>
     </div>
 </div>
 

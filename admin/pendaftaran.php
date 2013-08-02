@@ -407,11 +407,8 @@ LIMIT $offset,$dataPerPage";
     </div>     
                     <footer>
                         <hr>
-                        <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
-                        <p class="pull-right">A <a href="http://www.portnine.com/bootstrap-themes" target="_blank">Free Bootstrap Theme</a> by <a href="http://www.portnine.com" target="_blank">Portnine</a></p>
-                        
-
-                        <p>&copy; 2012 <a href="http://www.portnine.com" target="_blank">Portnine</a></p>
+                        <p class="pull-right">Sistem Akademik by <a href="http://www.oksigenoffice.com" target="_blank">Team Oksigen</a></p>
+                        <p>&copy; 2013 <a href="http://www.oksigenoffice.com" target="_blank">OksigenOffice</a></p>
                     </footer>
                     
             </div>
