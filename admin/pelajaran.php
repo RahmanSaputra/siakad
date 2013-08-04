@@ -241,7 +241,7 @@ LIMIT $offset,$dataPerPage";
 
                   
                  <td>
-    <a href=update_pendaftaran.php?no_daftar=<?php echo $e; ?>><i class=icon-pencil></i></a>
+    <a href=update_pelajaran.php?kode_mapel=<?php echo $e; ?>><i class=icon-pencil></i></a>
     <a href="#myModal" role="button" data-toggle="modal" id="<?php echo $e; ?>"><i class=icon-remove></i></a>
           </td>
          </tr>
@@ -376,7 +376,7 @@ LIMIT $offset,$dataPerPage";
                  <td><?php echo $c; ?></td>
                   
                  <td>
-    <a href=update_pendaftaran.php?no_daftar=<?php echo $e; ?>><i class=icon-pencil></i></a>
+    <a href=update_pelajaran.php?kode_mapel=<?php echo $e; ?>><i class=icon-pencil></i></a>
     <a href="#myModal" role="button" data-toggle="modal" id="<?php echo $e; ?>"><i class=icon-remove></i></a>
           </td>
          </tr>

@@ -179,11 +179,32 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
-                    <form class="search form-inline">
-            <input type="text" placeholder="Search...">
-            <a class="btn btn-primary" href="#">
-  <i class="icon-search icon-large"></i> Search</a>
-        </form>     
+                     <form action="pelajaransearch.php" method="post" class="search form-inline" id="form-search">
+                <input name="search" type="text" class="typeahead" id="search" placeholder="Search..">
+               <script>
+        $(document).ready(function(){
+            $('#search').typeahead({
+                source: function(query, process) {
+                    $.ajax({
+                        url: 'searchpelajaran.php',
+                        type: 'POST',
+                        data: 'query=' + query,
+                        dataType: 'JSON',
+                        async: true,
+                        success: function(data) {
+                            process(data);
+                                           
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+       <a class="btn btn-primary" onclick="document.getElementById('form-search').submit();">
+      <i class="icon-search icon-large"></i> Search</a>
+    <a class="btn btn-primary" href="matapelajaran.php";">
+      <i class="icon-plus icon-large"></i> New</a>
+      </form>
 <div class="btn-toolbar">
 <a href="#Modalbaru" role="button" data-toggle="modal" class="btn btn-primary">
       <i class="icon-plus-sign icon-large"></i> New MataPelajaran</a>    <button class="btn">Import</button>
@@ -200,6 +221,7 @@
               <th>NIP</th>
               <th>Nama Guru</th>
               <th>Mata Pelajaran</th>
+              <th>Kelas </th>
               <th style="width: 26px;"></th>
             </tr>
             <tr>
@@ -219,18 +241,17 @@
     }
      
     $offset=($noPage-1) * $dataPerPage;
-    $query = "SELECT pembelajaran.id_pembelajaran, guru.NIP, guru.nama, mata_pelajaran.nama_mapel, mata_pelajaran.kode_mapel
+    $query = "SELECT pembelajaran.id_pembelajaran, guru.NIP, guru.nama, mata_pelajaran.nama_mapel, mata_pelajaran.kode_mapel, pembelajaran.kode_kelas
 FROM guru
-RIGHT JOIN pembelajaran 
-ON guru.NIP = pembelajaran.NIP
-RIGHT JOIN mata_pelajaran 
-ON pembelajaran.kode_mapel = mata_pelajaran.kode_mapel
+RIGHT JOIN pembelajaran ON guru.NIP = pembelajaran.NIP
+RIGHT JOIN mata_pelajaran ON pembelajaran.kode_mapel = mata_pelajaran.kode_mapel
 ORDER BY `pembelajaran`.`id_pembelajaran` ASC
 LIMIT $offset,$dataPerPage";
                         $exe = mysql_query($query);
                         while($row = mysql_fetch_assoc($exe)){
             				$e = $row['kode_mapel'];
                             $d = $row['NIP'];  
+							$f = $row['kode_kelas'];
 							$b = $row['nama'];
                             $c = $row['nama_mapel'];
 							$a = $row['id_pembelajaran'];
@@ -241,6 +262,7 @@ LIMIT $offset,$dataPerPage";
                  <td><?php echo $d; ?></td>
                  <td><?php echo $b; ?></td>
                  <td><?php echo $c; ?></td>
+                  <td><?php echo $f; ?></td>
                   
                  <td>
     <a href=update_pendaftaran.php?no_daftar=<?php echo $e; ?>><i class=icon-pencil></i></a>
@@ -372,6 +394,7 @@ FROM `kelas`";
          } 
           echo   "</select>"; ?>
       </tr>
+      
     </table>
       </div>
         <div class="modal-footer">
