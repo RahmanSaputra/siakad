@@ -5,8 +5,7 @@ Sistem Akademik Reloaded
 Ini adalah project Sistem Akademik atau biasanya disebut siakad, tujuan dibuatnya project ini adalah untuk mengembangkan
 sistem akademik berbasis web.
 
-Project ini masih dalam tahap proses development. saya akan merasa senang bila ada teman
-teman yang mau ikut menjadi kontributor dalam project ini.
+Project ini masih dalam tahap proses development.
 
 Getting Started
 ---------------
