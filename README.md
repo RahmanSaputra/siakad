@@ -22,7 +22,7 @@ Getting Started
 
 Demo
 ----
-Untuk Demo nya bisa kunjungi (Terakhir update tanggal 17 Jul) Untuk release update lihat dibawah
+Untuk Demo nya bisa kunjungi (Terakhir update tanggal 01 Agustus) Untuk release update lihat dibawah
 
 http://pertamakali.ml/
 
